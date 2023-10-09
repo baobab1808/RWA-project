@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Apartmani Jelena</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.top-left {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #00CCFF;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #000000;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #CCFFFF;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #00CCCC;
+  color: white;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 17px;  
+  border: none;
+  outline: none;
+  color: black;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 120px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+}
+
+.dropdown-content a:hover {
+  background-color: #CCFFFF;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.topnav-right{
+	float: right;
+}
+
+#jezik{
+	height: 40px;
+	width: 60px;
+	align: right;
+	
+}
+
+#jezik1{
+	float: right;
+}
+
+#login{
+	float: right;
+}
+
+.mySlides {
+	text-align: center;
+	height: 200px;
+}
+
+.mySlides img{
+	width: 100%;
+	max-height: 100%;
+	object-fit: cover;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 100%;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 5px;
+  width: 5px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+
+.cover {object-fit: cover;}
+
+
+
+</style>
+</head>
+<body style="background-image:url('pozadina3.jpg'); background-size:cover;">
+
+<div class="topnav" id="myTopnav">
+  <a href="hehehe_logged.html" class="active">Naslovna</a>
+  <a href="lokacija_logged.html">Lokacija</a>
+   <div class="dropdown">
+    <button class="dropbtn">Smještaj 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="mala_soba_logged.html">Mala Soba</a>
+      <a href="velika_soba_logged.html">Velika Soba</a>
+      <a href="apartman_logged.html">Apartman</a>
+    </div>
+  </div> 
+  <a href="kontakti_logged.html">Kontakti</a>
+  <a href="info_logged.php">Informacije</a>
+  <a href="rezervirano.php">Rezervirano</a>
+  <div class="topnav-right">
+	  <div class="dropdown">
+		<button class="dropbtn" id="jezik1" style="float:right">Jezik
+		  <i class="fa fa-caret-down"></i>
+		</button>
+		<div class="dropdown-content" id="jezik">
+		  <a href="hehehe_loggedENG.html">ENG</a>
+		</div>
+	  </div> 
+	  <a href="login.php">Odjava</a>
+  </div>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+
+<!---<div class="container">
+  <img class="cover" id ="more" src="more.jpg" width="100%" height="250"> 
+  <div class="top-left"><h2>Apartmani Jelena</h2></div>  
+</div>--->
+
+<div class="slideshow-container">
+
+	<div class="mySlides fade">
+	  <div class="numbertext">1 / 3</div>
+	  <img src="naslovna1.png" style="width:100%">
+	 
+	</div>
+
+	<div class="mySlides fade">
+	  <div class="numbertext">2 / 3</div>
+	  <img src="naslovna2.png" style="width:100%">
+	  
+	</div>
+
+	<div class="mySlides fade">
+	  <div class="numbertext">3 / 3</div>
+	  <img src="naslovna3.png" style="width:100%">
+	 
+	</div>
+
+	<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+	<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+</div>
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+
+
+<center><h1 style="font-family:Decorative; font-size:40px;"><b><i>Dobrodošli na stranicu Apartmana Jelena !</i></b></h1></center>
+</br>
+
+<h3><i>Sa zadovoljstvom ćemo ispuniti sve Vaše želje kako bi Vaš sljedeći odmor postao odmor iz snova!
+Na našoj web stranici možete pronaći potrebne informacije o boravku u Apartmanu Jelena te uslugama koje nudimo, a za sva dodatna pitanja pošaljite nam upit u odjeljku <a href="info.php">Informacije</a>.</i></h3>
+</br>
+<div style="background:rgba(255,255,255,0.7); border-radius:25px; margin-left:20px; margin-right:20px;">
+<h4 style="font-family:Decorative;font-size:30px;"><b><i>O nama</i></b></h4>
+
+<p>Apartman Jelena već dvadeset i pet godina uveseljava svoje vjerne goste te je postao sinonim za obiteljski odmor i druženje.
+Ako nas još niste posjetili, dopustite nam da Vas iznenadimo našom ljubaznosti i jednostavnosti te Vam ponudimo miran smještaj koji odiše opuštenosti i bezbrižnosti. 
+Kako bi naši gosti uvijek bili zadovoljni, brine se gđa Jelena Peričić koja se iznajmljivanjem apartmana, kao privatnim obiteljskim poslom, bavi preko 50 godina.
+Želite li Vaš odmor provesti u obiteljskoj atmosferi ili jednostavno tražite malo mira i tišine kako bi „napunili energiju” i uživali u ljepotama našega Kvarnera, na pravome ste mjestu.
+Preputite nam Vaše povjerenje i nećemo Vas iznevjeriti.
+</p>
+<center><img src="Haus3.jpg" style="height:300px; width:520px;"/></center>
+</div>
+
+
+<br><br>
+
+<div style="background:rgba(255,255,255,0.7); border-radius:25px; margin-left:20px; margin-right:20px;">
+<h4 style="font-family:Decorative;font-size:30px;"><b><i>O vlasnici</i></b></h4>
+
+<p>Vlasnica Jelena Peričić, rođena 2. studenog 1951., već dugi niz godina brižno pazi na svoje goste i da nikome nikada ništa ne nedostaje. Razumije potrebe svojih gostiju i nastoji ispuniti sva njihova očekivanja. Apartmane koje drži sama je izgradila sa svojim pokojnim mužem Nikolom Peričićem. Uvijek je u pokretu, ali navečer voli odmarati uz gledanje njezinih omiljenih turskih serija. Uz vođenje apartmana u slobodno vrijeme voli sa svojim sestrama otići u šumu brati gljive ili putovati po svijetu. Obožava kuhati i peći kolače za svoje goste, zbog toga njezina kuća uvijek miriše po ukusnim delicijama, ali ne brinite, nema u njezinoj kuhinji nikakvog GMO-a, sve je 100% domaće i svježe. </p>
+	<center><img src="vlasnica.jpg" style="height:350px; width:420px;"/></center>
+</div>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
+
+
+</body>
+</html>

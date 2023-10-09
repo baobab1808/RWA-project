@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Apartmani Jelena</title>
+<!---<meta http-equiv="refresh" content="5"/>--->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+
+* {box-sizing: border-box;}
+
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.top-left {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+}
+
+.img-magnifier-container {
+  position:relative;
+}
+.img-magnifier-glass {
+  position: absolute;
+  border: 2px dotted #000;
+  border-radius: 50%;
+  cursor: none;
+  /*Set the size of the magnifier glass:*/
+  width: 150px;
+  height: 150px;
+  
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url(lokacija_pozadina.jpg);
+  background-size: cover;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #00CCFF;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #000000;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #CCFFFF;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #00CCCC;
+  color: white;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 17px;  
+  border: none;
+  outline: none;
+  color: black;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 120px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+}
+
+.dropdown-content a:hover {
+  background-color: #CCFFFF;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.topnav-right{
+	float: right;
+}
+
+#jezik{
+	height: 40px;
+	width: 60px;
+	align: right;
+	
+}
+
+#jezik1{
+	float: right;
+}
+
+#login{
+	float: right;
+}
+
+.mySlides {
+	text-align: center;
+	height: 200px;
+}
+
+.mySlides img{
+	width: 100%;
+	max-height: 100%;
+	object-fit: cover;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 100%;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 5px;
+  width: 5px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+
+
+.cover {object-fit: cover;}
+.scale-down {object-fit: scale-down;}
+
+
+</style>
+
+
+</head>
+<body>
+
+<nav class="topnav" id="myTopnav">
+  <a href="hehehe_admin.html">Naslovna</a>
+  <a href="lokacija_admin.html"  class="active">Lokacija</a>
+  <div class="dropdown">
+    <button class="dropbtn">Smještaj 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="mala_soba_admin.html">Mala Soba</a>
+      <a href="velika_soba_admin.html">Velika Soba</a>
+      <a href="apartman_admin.html">Apartman</a>
+    </div>
+  </div> 
+  <a href="kontakti_admin.html">Kontakti</a>
+  <a href="info_admin.php">Informacije</a>
+  <a href="poruke.php">Poruke</a>
+  <a href="rezervacije_admin.php">Rezervacije</a>
+  <div class="topnav-right">
+	  <a href="login.php">Odjava</a>
+  </div>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</nav>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
+
+<!---<div class="container">
+  <img class="cover" id ="more" src="more.jpg" width="100%" height="250"> 
+  <div class="top-left"><h2>Apartmani Jelena</h2></div>  
+</div>--->
+
+<div class="slideshow-container">
+
+	<div class="mySlides fade">
+	  <div class="numbertext">1 / 3</div>
+	  <img src="naslovna1.png" style="width:100%">
+	 
+	</div>
+
+	<div class="mySlides fade">
+	  <div class="numbertext">2 / 3</div>
+	  <img src="naslovna2.png" style="width:100%">
+	 
+	</div>
+
+	<div class="mySlides fade">
+	  <div class="numbertext">3 / 3</div>
+	  <img src="naslovna3.png" style="width:100%">
+	 
+	</div>
+
+	<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+	<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+</div>
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+
+<center>
+<div style="background:rgba(255, 255, 255, 0.6); border-radius:12px;width:100%; font-family:decorate; font-size:20px">
+<h1>O Novom Vinodolskom</h1>
+<br>
+<p>Novi Vinodolski mali je primorski grad smješten na obali Jadranskoga mora, u   Kvarnerskome zaljevu. Njegovi stanovnici bavili su se drvodjelstvom, pomorstvom, ribarstvom i stočarstvom 
+te proizvodnjom soli, a posebno se mogu pohvaliti svojim  kvalitetnim vinima. Danas je to turističko odredište mnogobrojnim posjetiteljima iz regije, ali mnogih dalekih zemalja. Bogata kulturna 
+baština i prekrasan krajolik nikoga ne ostavljaju ravnodušnim, a tradicionalni plesovi, glazba i jela te svečanosti i festivali koji se održavaju tijekom cijele godine udružuju stanovnike i njihove 
+obitelji i svatko tko se želi pridružiti, dobrodošao je.
+Tijekom posjeta Novom nikako nemojte zaobići šetnju našom rivijerom te plaže i uvale u kojima ćete uživati u zalasku sunca s pogledom na prekrasno, kristalno plavo Jadransko more.
+U nastavku smo Vam pripremili listu nekoliko kulturnih spomenika našega grada, a klik na poveznicu odvest će Vas na stranice s više informacija o njima.
+<br>
+Dobro nam došli, želimo Vam ugodan odmor!
+<br>
+<br>
+<br>
+</p>
+</div>
+</center>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+<center>
+<div style="background:rgba(255, 255, 255, 0.6); border-radius:12px;width:600px">
+<table style="border:0px; font-family:decorative; font-size:20px">
+<tr><th><i>Udaljenosti Apartmana Jelena od:</i></th></tr>
+<tr><th><i></i></th></tr>
+<tr><th><i></i></th></tr>
+<tr><th><i></i></th></tr>
+<tr><th><i></i></th></tr>
+<tr><td>mora:</td><td>600m</td></tr>
+<tr><td>glavne plaže:</td><td>1,1km</td></tr>
+<tr><td>centra:</td><td>1 km</td></tr>
+<tr><td>trgovine:</td><td>350m</td></tr>
+<tr><td>restorana(pizzerije):</td><td>900m</td></tr>
+<tr><td>ljekarne:</td><td>1,2km</td></tr>
+<tr><td>banke:</td><td>1,3m</td></tr>
+<tr><td>mjenjačnice:</td><td>900m</td></tr>
+<tr><td>pošte:</td><td>900m</td></tr>
+<tr><td>benzinske crpke:</td><td>950m</td></tr>
+<tr><td>autobusnog kolodvora:</td><td>1,1km</td></tr>
+<tr><td>marine:</td><td>1,6km</td></tr>
+</table>
+<br>
+<br>
+</p>
+</div>
+</center>
+<br>
+<br>
+<br>
+<div style="height:300px; background:rgba(0,0,0,0.6); border-radius:12px; width100%">
+<center>
+<a href="https://frankopani.eu/loc/kastel-s-kulom-kvadrac-novi-vinodolski/">
+<img border="0" src="lokacija1.jpg" width="20%">
+</a>
+<a href="http://www.mojazupa.eu/index.php?z=1369&page=details">
+<img border="0" src="lokacija3.jpg" width="20%">
+</a>
+<a href="https://hr.wikipedia.org/wiki/San_Marino_(otok)">
+<img border="0" src="lokacija2.jpg" width="20%">
+</a>
+<a href="https://hr.wikipedia.org/wiki/Vinodolski_zakonik">
+<img border="0" src="lokacija4.jpg" width="10%">
+</a>
+<a href="http://www.tz-novi-vinodolski.hr/hr/sakralni_objekti/31/8">
+<img border="0" src="lokacija5.jpg" width="20%">
+</a>
+</center>
+</div>
+
+<br>
+<br>
+
+
+
+<script>
+function magnify(imgID, zoom) {
+  var img, glass, w, h, bw;
+  img = document.getElementById(imgID);
+  /*create magnifier glass:*/
+  glass = document.createElement("DIV");
+  glass.setAttribute("class", "img-magnifier-glass");
+  /*insert magnifier glass:*/
+  img.parentElement.insertBefore(glass, img);
+  /*set background properties for the magnifier glass:*/
+  glass.style.backgroundImage = "url('" + img.src + "')";
+  glass.style.backgroundRepeat = "no-repeat";
+  glass.style.backgroundSize = (img.width * zoom) + "px " + (img.height * zoom) + "px";
+  bw = 3;
+  w = glass.offsetWidth / 2;
+  h = glass.offsetHeight / 2;
+  /*execute a function when someone moves the magnifier glass over the image:*/
+  glass.addEventListener("mousemove", moveMagnifier);
+  img.addEventListener("mousemove", moveMagnifier);
+  /*and also for touch screens:*/
+  glass.addEventListener("touchmove", moveMagnifier);
+  img.addEventListener("touchmove", moveMagnifier);
+  function moveMagnifier(e) {
+    var pos, x, y;
+    /*prevent any other actions that may occur when moving over the image*/
+    e.preventDefault();
+    /*get the cursor's x and y positions:*/
+    pos = getCursorPos(e);
+    x = pos.x;
+    y = pos.y;
+    /*prevent the magnifier glass from being positioned outside the image:*/
+    if (x > img.width - (w / zoom)) {x = img.width - (w / zoom);}
+    if (x < w / zoom) {x = w / zoom;}
+    if (y > img.height - (h / zoom)) {y = img.height - (h / zoom);}
+    if (y < h / zoom) {y = h / zoom;}
+    /*set the position of the magnifier glass:*/
+    glass.style.left = (x - w) + "px";
+    glass.style.top = (y - h) + "px";
+    /*display what the magnifier glass "sees":*/
+    glass.style.backgroundPosition = "-" + ((x * zoom) - w + bw) + "px -" + ((y * zoom) - h + bw) + "px";
+  }
+  function getCursorPos(e) {
+    var a, x = 0, y = 0;
+    e = e || window.event;
+    /*get the x and y positions of the image:*/
+    a = img.getBoundingClientRect();
+    /*calculate the cursor's x and y coordinates, relative to the image:*/
+    x = e.pageX - a.left;
+    y = e.pageY - a.top;
+    /*consider any page scrolling:*/
+    x = x - window.pageXOffset;
+    y = y - window.pageYOffset;
+    return {x : x, y : y};
+  }
+}
+</script>
+
+<div class="img-magnifier-container">
+  <img id="myimage" class="scale-down" src="https://maps.googleapis.com/maps/api/staticmap?center=Ina,Novi_Vinodolski&zoom=14.5&size=600x300&maptype=roadmap
+&markers=color:red%7Alabel:A%7C45.124453,14.803507
+&key=AIzaSyA3s1dtbC1J53923G_CFk5xuGVNg9Al2YI" width="100%" height="auto">
+</div>
+<script>
+
+/* Initiate Magnify Function
+with the id of the image, and the strength of the magnifier glass:*/
+magnify("myimage", 2);
+</script>
+</body>
+</html>
